@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Leverancier(models.model):
+class Leverancier(models.Model):
     BedrijfsNaam = models.CharField(max_length=100)
     Adres = models.CharField(max_length=100)
     ContactPersoon = models.CharField(max_length=100)

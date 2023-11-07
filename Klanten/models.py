@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Klant(models.model):
+class Klant(models.Model):
     GezinsNaam = models.CharField(max_length=100)
     Volwassenen = models.IntegerField()
     Kinderen = models.IntegerField()
@@ -16,7 +16,7 @@ class Klant(models.model):
     def __str__(self):
         return self.GezinsNaam, self.id
     
-class BSN(models.model):
+class BSN(models.Model):
     Klant = models.ForeignKey("Klant", on_delete=models.DO_NOTHING, null=True)
     BSN = models.IntegerField()
     volledigeNaam = models.CharField(max_length=100)
@@ -24,8 +24,8 @@ class BSN(models.model):
     def __str__(self):
         return self.volledigeNaam, self.id
         
-class Alergie(models.model):
+class Alergie(models.Model):
     Naam = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.Naam, self.id
+        return self.Naam, self.id 

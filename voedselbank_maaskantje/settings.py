@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     # Local apps
     "login",
+    "directie",
+    "magazijn",
+    "Klanten",
 ]
 
 MIDDLEWARE = [
