@@ -5,18 +5,20 @@ from django.db import models
 class Product(models.model):
     name = models.CharField(max_length=100)
     EAN = models.IntegerField()
-    HoudsbaarheidDatum = models.DateField()
-    Status = models.IntegerField()
     Afbeelding = models.ImageField()
     Varkesvlees = models.BooleanField()
     Vegataries = models.BooleanField()
     Veganistisch = models.BooleanField()
     Catagorieën = models.ManyToManyField("Catagorie", related_name="product")
-    Leverancier = models.ForeignKey("Leverancier", on_delete=models.DO_NOTHING, null=True)
-    Pakket = models.ForeignKey("Pakket", on_delete=models.DO_NOTHING, null=True)
 
     def __str__(self):
         return self.name, self.id
+    
+class ProductItem(models.model):
+    Product = models.ForeignKey("Product", on_delete=models.DO_NOTHING, null=True)
+    Pakket = models.ForeignKey("Pakket", on_delete=models.DO_NOTHING, null=True)
+    HoudsbaarheidDatum = models.DateField()
+    Status = models.IntegerField()
     
 
     class Catagorie(models.model):
