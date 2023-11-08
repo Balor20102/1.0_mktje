@@ -5,14 +5,14 @@ from django.db import models
 class Product(models.Model):
     name = models.CharField(max_length=100)
     EAN = models.IntegerField()
-    Afbeelding = models.ImageField()
+    Afbeelding = models.ImageField(upload_to='images/', null=True)
     Varkesvlees = models.BooleanField()
     Vegataries = models.BooleanField()
     Veganistisch = models.BooleanField()
     Catagorieën = models.ManyToManyField("Catagorie", related_name="product")
 
     def __str__(self):
-        return self.name, self.id
+        return self.name
     
 class ProductItem(models.Model):
     Product = models.ForeignKey("Product", on_delete=models.DO_NOTHING, null=True)
@@ -26,11 +26,11 @@ class Catagorie(models.Model):
         Omschrijving = models.CharField(max_length=100)
 
         def __str__(self):
-            return self.Naam, self.id
+            return self.Naam
         
 class Pakket(models.Model):
         GezinsNaam = models.ForeignKey("Klanten.Klant", on_delete=models.DO_NOTHING, null=True)
         UitgiftDatum = models.DateField()
 
         def __str__(self):
-            return self.GezinsNaam, self.id
+            return self.GezinsNaam
