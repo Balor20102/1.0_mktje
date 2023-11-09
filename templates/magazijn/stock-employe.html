@@ -1,0 +1,20 @@
+{% load static %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{% static 'css/stock.css' %}">
+{% endblock stylesheets %}
+
+{% block content %}
+<div class="flex">
+    <div>
+    </div>   
+
+    <div class= 'flex'> 
+    {% for product in products %}
+        {% include "components/stock-card.html" with product=product %}
+    {% endfor %}
+    </div>
+
+    <div>
+    </div>    
+</div>
+    {% endblock content %}
