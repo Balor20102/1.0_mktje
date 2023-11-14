@@ -1,44 +1,45 @@
 .grid-products{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 20% 80%;
-}
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 0.5fr 1.5fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "searchbar searchbar searchbar searchbar"
+      "filter items items items"
+      "filter items items items"; 
+  }
 #zoekbak{
-    grid-row: 1/2;
-    grid-column: 1/5;
+    grid-area: searchbar;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: 4rem;
 }
 
-.zoekbak{
-    width: 90%;
-    height: 50%;
+.zoekbak {
+    width: 80%; /* Adjust this value */
     border-radius: 20px;
     text-align: center;
     padding: 0.5rem;
 }
 
 .looking-glass{
-    height: 100%;
+    height: 2rem;
 }
 
 .submit-zoekbak{
     margin-left:-5%;
     width: 10%;
-    height: 50%;
     border-radius: 20px;
     background-color: #B8B8FF;
 }
 #item1{
-    grid-row: 2/3;
-    grid-column: 1/2;
+    grid-area: filter;
 }
 
 #item2{
-    grid-row: 2/3;
-    grid-column: 2/5;
+    grid-area: items;
 }
 
 .flex-products {

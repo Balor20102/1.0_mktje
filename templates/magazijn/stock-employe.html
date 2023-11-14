@@ -6,8 +6,9 @@
 {% block content %}
 <div class="grid-products">
 
-    <form method="GET" id = "zoekbak">
-        <input type="text" name="search" placeholder="Zoek product" class="zoekbak" value="{{ request.GET.search }}">
+    <form method="GET" id= "zoekbak">
+        {% comment %} <input type="text" name="search" placeholder="Zoek product" class="zoekbak" value="{{ request.GET.search }}"> {% endcomment %}
+        {{ filter.form.searchbar }}
         <button type="submit" class= "submit-zoekbak"><img class= 'looking-glass'src='{% static "image/looking_glass.png" %}'></button>
     </form>
 
@@ -22,7 +23,7 @@
 
     <div id ='item2'> 
         <div class= 'flex-products'> 
-        {% for product in products %}
+        {% for product in filter.qs %}
             {% include "components/stock-card.html" with product=product %}
         {% endfor %}
         </div>
