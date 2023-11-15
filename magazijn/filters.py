@@ -1,6 +1,7 @@
 import django_filters
 from django.db.models import Q
 from django import forms
+from .models import Catagorie
 
 class ProductFilter(django_filters.FilterSet):
     searchbar = django_filters.CharFilter(
@@ -14,3 +15,11 @@ class ProductFilter(django_filters.FilterSet):
         return queryset.filter(
             Q(name__icontains=value) | Q(EAN__iexact=value)
         )
+class CategorieProduct(django_filters.FilterSet):
+    author = django_filters.ModelMultipleChoiceFilter(
+        field_name='Catagorieën',
+        to_field_name='id',
+        queryset=Catagorie.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        label='Categorieën',
+    )

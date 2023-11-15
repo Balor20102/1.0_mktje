@@ -36,6 +36,17 @@
 }
 #item1{
     grid-area: filter;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 20px;
+    margin-right: 0%;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #B8FFB8;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    min-height: 25rem;
+    max-width: 15rem;
 }
 
 #item2{
@@ -55,11 +66,13 @@
     width: 200px;
     height: 200px;
     margin: 20px;
+    margin-left: 0%;
     padding: 6px;
     padding-bottom: 1rem;
     border-radius: 10px;
     background-color: #B8FFB8;
     text-align: center;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 .image-card{
     width: 100%;
@@ -75,5 +88,23 @@
  border-radius: 20px;
  color: black;
  text-decoration: none;
+ padding: 0.5rem;
 
+}
+
+.zoek-btn{
+    background-color: #B8B8FF;
+    padding: 0.3rem;
+    border-radius: 20px;
+    color: black;
+    text-decoration: none;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.zoek-btn img{
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
 }
