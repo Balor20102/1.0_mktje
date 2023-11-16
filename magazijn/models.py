@@ -22,11 +22,11 @@ class ProductItem(models.Model):
     
 
 class Catagorie(models.Model):
-        Naam = models.CharField(max_length=100)
+        Naam = models.CharField(max_length=100, unique=True)
         Omschrijving = models.CharField(max_length=100)
 
         def __str__(self):
-            return self.Naam, self.id
+            return self.Naam
         
 class Pakket(models.Model):
         GezinsNaam = models.ForeignKey("Klanten.Klant", on_delete=models.DO_NOTHING, null=True)

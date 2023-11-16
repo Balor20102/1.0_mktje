@@ -8,3 +8,5 @@ class Leverancier(models.Model):
     Telefoon = models.IntegerField()
     Email = models.EmailField()
     LeveringsDatum = models.DateField()
+
+
