@@ -19,7 +19,8 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from login.views import LoginView, home
-from magazijn.views import StockEmployeView
+from magazijn.views import StockEmployeView, AddStockView
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -27,6 +28,7 @@ urlpatterns = [
     path("home/", home, name="home"),
     path("logout/", LogoutView.as_view(next_page='login'), name="logout"),
     path("voorraad-medewerker/", StockEmployeView.as_view(), name="stock-employe"),
+    path("voorraad-medewerker/toevoegen/", AddStockView.as_view(), name="add-stock"),
 ]
 
 if settings.DEBUG:
