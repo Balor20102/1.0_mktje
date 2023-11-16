@@ -17,10 +17,15 @@ from django.contrib import admin
 from django.contrib.auth.views import LogoutView
 from django.urls import path
 from login.views import LoginView, home
+from directie.views import create_catagorie, catagorieën, directiehomepage, verwijder_catagorie
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", LoginView.as_view(), name="login"),
     path("home/", home, name="home"),
     path("logout/", LogoutView.as_view(next_page='login'), name="logout"),
+    path('create_catagorie/', create_catagorie, name='create_catagorie'),
+    path('catagorieën/', catagorieën, name='catagorieën'),
+    path('directiehomepage/', directiehomepage, name='directiehomepage'),
+    path('verwijder_catagorie/<str:char_field_value>/', verwijder_catagorie, name='verwijder_catagorie'),
 ]
