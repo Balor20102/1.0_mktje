@@ -1,12 +1,13 @@
 .grid-products{
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr 1fr; 
-    grid-template-rows: 0.5fr 1.5fr 1fr; 
+    grid-template-rows: 0.5fr 1.5fr 1fr 0.5fr; 
     gap: 0px 0px; 
     grid-template-areas: 
       "searchbar searchbar searchbar searchbar"
       "filter items items items"
-      "filter items items items"; 
+      "filter items items items"
+      "pagination pagination pagination pagination";
   }
 #zoekbak{
     grid-area: searchbar;
@@ -108,3 +109,34 @@
     height: 1rem;
     margin-right: 0.5rem;
 }
+
+
+#item3{
+    grid-area: pagination;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.pagination {
+    display: inline-block;
+    padding: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    background-color: rgb(250, 250, 250);
+    border-radius: 5px;
+
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: solid rgb(170, 170, 170) 1px;
+  }
+  
+  .pagination a.active {
+    background-color: #B8FFB8;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}

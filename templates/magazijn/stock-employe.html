@@ -37,10 +37,10 @@
         </div>
     </div>
 
-    <div>
-        <span class="step-links">
+    <div id='item3'>
+        <span class="pagination">
             {% if page_obj.has_previous %}
-                <a href="{% my_url 1 'page' request.GET.urlencode %}">first</a>
+                <a href="{% my_url 1 'page' request.GET.urlencode %}">&laquo;</a>
             {% endif %}
         
             {% for i in page_obj.paginator.page_range %}
@@ -50,10 +50,10 @@
         {% endfor %}
         
             {% if page_obj.has_next %}
-                <a href="{% my_url page_obj.paginator.num_pages 'page' request.GET.urlencode %}">last</a>
+                <a href="{% my_url page_obj.paginator.num_pages 'page' request.GET.urlencode %}">&raquo;</a>
             {% endif %}
         </span>
-    </div>    
+    </div>
 </form>
 
     {% endblock content %}
